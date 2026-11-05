@@ -1,0 +1,60 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Susun source per package
+        shell: bash
+        run: |
+          mkdir -p build-src/src/main/java build-src/src/main/resources
+          # Hanya file di java-files.txt yang dikompilasi (file lama di repo diabaikan)
+          if [ -f java-files.txt ]; then
+            files=$(grep -v "^[[:space:]]*#" java-files.txt | tr -d "\r" | grep -v "^[[:space:]]*$")
+          else
+            files=$(ls *.java)
+          fi
+          for f in $files; do
+            if [ ! -f "$f" ]; then
+              echo "::error::File tidak ada di repo: $f"
+              exit 1
+            fi
+            pkg=$(grep -m1 "^package " "$f" | sed "s/package \(.*\);/\1/" | tr -d "\r" | tr . /)
+            mkdir -p "build-src/src/main/java/$pkg"
+            cp "$f" "build-src/src/main/java/$pkg/"
+            echo "compile: $f -> $pkg"
+          done
+          cp plugin.yml build-src/src/main/resources/
+          cp config.yml build-src/src/main/resources/
+          # File flat "deploy__MythicMobs__Skills__x.yml" -> deploy/MythicMobs/Skills/x.yml
+          for f in deploy__*; do
+            [ -f "$f" ] || continue
+            dest="build-src/src/main/resources/${f//__//}"
+            mkdir -p "$(dirname "$dest")"
+            cp "$f" "$dest"
+          done
+          # Kalau masih ada folder deploy asli, tetap ikut
+          if [ -d deploy ]; then
+            cp -r deploy build-src/src/main/resources/
+          fi
+          cp pom.xml build-src/
+
+      - name: Build
+        run: mvn -B -f build-src/pom.xml package
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stt
+          path: build-src/target/stt-*.jar
