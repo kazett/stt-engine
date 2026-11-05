@@ -1,0 +1,20 @@
+# Daftar file .java yang ikut dikompilasi. Tambah baris di sini kalau bikin class baru.
+AssetsDeployer.java
+BlackFireSkill.java
+Blast.java
+CooldownHud.java
+GravityPullSkill.java
+ManaService.java
+MeteorCrashSkill.java
+MythicSkillCaster.java
+NativeSkill.java
+PlayerData.java
+PlayerDataService.java
+SkillDefinition.java
+SkillService.java
+SkillType.java
+Stt.java
+SttCommand.java
+SttGui.java
+SwapStepSkill.java
+VoiceManager.java

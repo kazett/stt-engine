@@ -1,0 +1,91 @@
+info:
+  namespace: mage
+items:
+  icon_meteor:
+    display_name: "icon_meteor"
+    permission: icon_meteor
+    resource:
+      material: COAL
+      model_id: 2069
+      generate: false
+      model_path: mage_model/icon_meteor
+  ground_crack_1:
+    display_name: "ground_crack_1"
+    permission: ground_crack_1
+    resource:
+      material: PAPER
+      model_id: 2258
+      generate: false
+      model_path: mage_model/ground_crack_1
+  ground_crack_2:
+    display_name: "ground_crack_2"
+    permission: ground_crack_2
+    resource:
+      material: PAPER
+      model_id: 2259
+      generate: false
+      model_path: mage_model/ground_crack_2
+  ground_crack_3:
+    display_name: "ground_crack_3"
+    permission: ground_crack_3
+    resource:
+      material: PAPER
+      model_id: 2260
+      generate: false
+      model_path: mage_model/ground_crack_3
+  ground_crack_4:
+    display_name: "ground_crack_4"
+    permission: ground_crack_4
+    resource:
+      material: PAPER
+      model_id: 2261
+      generate: false
+      model_path: mage_model/ground_crack_4
+  ground_crack_5:
+    display_name: "ground_crack_5"
+    permission: ground_crack_5
+    resource:
+      material: PAPER
+      model_id: 2262
+      generate: false
+      model_path: mage_model/ground_crack_5
+  ground_crack_6:
+    display_name: "ground_crack_6"
+    permission: ground_crack_6
+    resource:
+      material: PAPER
+      model_id: 2263
+      generate: false
+      model_path: mage_model/ground_crack_6
+  ground_crack_explode_1:
+    display_name: "ground_crack_explode_1"
+    permission: ground_crack_explode_1
+    resource:
+      material: PAPER
+      model_id: 2264
+      generate: false
+      model_path: mage_model/ground_crack_explode_1
+  ground_crack_explode_2:
+    display_name: "ground_crack_explode_2"
+    permission: ground_crack_explode_2
+    resource:
+      material: PAPER
+      model_id: 2265
+      generate: false
+      model_path: mage_model/ground_crack_explode_2
+  ground_crack_explode_3:
+    display_name: "ground_crack_explode_3"
+    permission: ground_crack_explode_3
+    resource:
+      material: PAPER
+      model_id: 2266
+      generate: false
+      model_path: mage_model/ground_crack_explode_3
+  meteor:
+    display_name: "meteor"
+    permission: meteor
+    resource:
+      material: PAPER
+      model_id: 2274
+      generate: false
+      model_path: mage_model/meteor

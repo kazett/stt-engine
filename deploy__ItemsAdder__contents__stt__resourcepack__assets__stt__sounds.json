@@ -1,0 +1,11 @@
+{
+  "shinra_tensei": {
+    "sounds": [
+      {
+        "name": "stt:shinra_tensei",
+        "stream": true,
+        "attenuation_distance": 64
+      }
+    ]
+  }
+}

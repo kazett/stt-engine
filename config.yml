@@ -1,0 +1,81 @@
+# STT Engine v3.0.0
+# Race system + Dynamic Voice + MythicMobs skills
+
+settings:
+  max-mana: 300
+  mana-regen-delay: 3
+  burnout-delay: 8
+  itemsadder-integration: true
+  # HUD cooldown di tengah atas layar
+  cooldown-hud-enabled: true
+
+# Hanya satu ras: Witch
+races:
+  witch:
+    display-name: "&dRace Witch"
+    skills:
+      - swap-step
+      - black-fire
+      - gravity-pull
+      - meteor-crash
+
+# Definisi skill
+skills:
+  # ===== Native Witch skills =====
+  swap-step:
+    name: "Swap Step"
+    phrase: "swap step"
+    cost: 25
+    cooldown: 8
+    type: NATIVE
+    range: 8
+
+  black-fire:
+    name: "Black Fire"
+    phrase: "black fire"
+    cost: 45
+    cooldown: 10
+    type: NATIVE
+    range: 15
+    duration: 5
+    damage-per-sec: 4.0
+    hit-mobs: false
+
+  gravity-pull:
+    name: "Gravity Pull"
+    phrase: "gravity pull"
+    cost: 30
+    cooldown: 8
+    type: NATIVE
+    radius: 12
+    front-distance: 3
+    power: 1.5
+    slow-level: 2
+    slow-duration: 1.5
+
+  meteor-crash:
+    name: "Meteor Crash"
+    phrase: "meteor crash"
+    cost: 40
+    cooldown: 12
+    type: NATIVE
+    height: 20
+    up-speed: 1.0
+    down-speed: 2.5
+    radius: 6
+    damage: 16
+    power: 5
+    depth: 10
+
+  # ===== Custom MythicMobs skill (hanya lewat /stt addskill) =====
+  # Tidak masuk list ras mana pun. Admin berikan manual.
+  # Upgrade = admin removeskill skill lama + addskill skill baru.
+  # STT hanya memanggil skill lewat voice. Damage, durasi, dan efek diatur di file skill pack
+  # (plugins/MythicMobs/Skills), bukan di sini.
+  meteor-storm:
+    name: "Meteor Storm"
+    phrase: "meteor storm"
+    cost: 120
+    cooldown: 20
+    type: MYTHIC_MOBS
+    mythic-skill-name: "Meteor"   # harus sama persis dengan nama skill di MythicMobs/Skills

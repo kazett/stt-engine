@@ -1,0 +1,43 @@
+######## Meteor only - cleaned ########
+
+# Meteor #
+
+Meteor:
+  Type: ARMOR_STAND
+  Pose:
+      Head: 0,0,0
+  ItemHead: meteor
+  Options:
+    Marker: true
+    Small: false
+    Invisible: true
+    Invincible: true
+  Skills:
+  - equip{item=meteor:4} ~onSpawn
+  - effect:particles{particle=lava;amount=6;hS=0.25;vS=0.25;y=1;speed=0;forwardOffset=0;sideOffset=0} @self ~onTimer:1
+  - effect:particles{particle=campfire_cosy_smoke;amount=3;hS=0.35;vS=0.15;y=1;speed=0.01;forwardOffset=0;sideOffset=0} @self ~onTimer:1
+  
+Ground_Crack:
+  Type: ARMOR_STAND
+  Pose:
+      RightArm: 0,0,0
+  Options:
+    Marker: true
+    Small: false
+    HasArms: true
+    Invisible: true
+    Invincible: true
+  Skills:
+  - equip{item=ground_crack_explode_3:0;delay=2} ~onSpawn
+  - equip{item=ground_crack_explode_2:0;delay=42} ~onSpawn
+  - equip{item=ground_crack_explode_1:0;delay=44} ~onSpawn
+  - equip{item=groundd_crack_1:0;delay=46} ~onSpawn
+  - equip{item=groundd_crack_2:0;delay=48} ~onSpawn
+  - equip{item=groundd_crack_3:0;delay=50} ~onSpawn
+  - equip{item=groundd_crack_4:0;delay=52} ~onSpawn
+  - equip{item=groundd_crack_5:0;delay=54} ~onSpawn
+  - equip{item=groundd_crack_6:0;delay=56} ~onSpawn
+  - skill{s=CRACK_REMOVE} ~onSpawn
+  - skill{s=CRACK_REMOVE} ~onTimer:1
+  - remove{delay=58} @self ~onSpawn
+  

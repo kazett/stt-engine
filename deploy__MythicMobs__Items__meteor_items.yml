@@ -1,0 +1,71 @@
+######## Meteor only - cleaned ########
+  
+groundd_crack_1:
+  Id: paper
+  Display: "&6"
+  Model: 2258
+  Hide:
+  - ATTRIBUTES
+  
+groundd_crack_2:
+  Id: paper
+  Display: "&6"
+  Model: 2259
+  Hide:
+  - ATTRIBUTES
+  
+groundd_crack_3:
+  Id: paper
+  Display: "&6"
+  Model: 2260
+  Hide:
+  - ATTRIBUTES
+  
+groundd_crack_4:
+  Id: paper
+  Display: "&6"
+  Model: 2261
+  Hide:
+  - ATTRIBUTES
+  
+groundd_crack_5:
+  Id: paper
+  Display: "&6"
+  Model: 2262
+  Hide:
+  - ATTRIBUTES
+  
+groundd_crack_6:
+  Id: paper
+  Display: "&6"
+  Model: 2263
+  Hide:
+  - ATTRIBUTES
+  
+ground_crack_explode_1:
+  Id: paper
+  Display: "&6"
+  Model: 2264
+  Hide:
+  - ATTRIBUTES
+  
+ground_crack_explode_2:
+  Id: paper
+  Display: "&6"
+  Model: 2265
+  Hide:
+  - ATTRIBUTES
+  
+ground_crack_explode_3:
+  Id: paper
+  Display: "&6"
+  Model: 2266
+  Hide:
+  - ATTRIBUTES
+  
+meteor:
+  Id: paper
+  Display: "&6"
+  Model: 2274
+  Hide:
+  - ATTRIBUTES

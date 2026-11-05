@@ -1,0 +1,21 @@
+{
+  "samus.fire_burn": {
+    "category": "master",
+    "sounds": [
+      "mage:samus/mage/fire_burn"
+    ]
+  },
+  "samus.meteor_explosion": {
+    "category": "master",
+    "sounds": [
+      "mage:samus/mage/meteor_explosion",
+	  "mage:samus/mage/meteor_explosion2"
+    ]
+  },
+  "samus.meteor": {
+    "category": "master",
+    "sounds": [
+      "mage:samus/mage/meteor"
+    ]
+  }
+}

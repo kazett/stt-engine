@@ -1,0 +1,5 @@
+METEOR:
+    mythicmobs-skill-id: Meteor
+    modifiers:
+    - damage
+    - duration

@@ -1,0 +1,54 @@
+######## Meteor only - cleaned ########
+
+# Meteor #
+
+Meteor:
+  Skills:
+  - Aura{auraName=Arcane_Missile_Aura;duration=99999;maxStacks=5} @self
+  - effect:sound{s=mage_sounds:samus.meteor;volume=0.8;pitch=1} @self
+  - delay 10
+  - projectile{bulletType=MOB;bulletSpin=8;mob=Meteor;onEnd=Meteor_HIT;v=14;i=1;hR=1;vR=1;mr=50;hnp=true;hO=0;sE=false;hs=false;hfs=0;sfo=0;syo=6;tyo=2} @Forward{f=5;y=0}
+
+Meteor_Tick:
+  Skills:
+  #- effect:particles{particle=flame;amount=30;hS=0.3;vS=0.3;y=1;speed=0.1;forwardOffset=0;sideOffset=0} @origin
+  - effect:particles{particle=lava;amount=6;hS=0.25;vS=0.25;y=1;speed=0;forwardOffset=0;sideOffset=0} @origin
+  - effect:particles{particle=campfire_cosy_smoke;amount=3;hS=0.35;vS=0.15;y=1;speed=0.01;forwardOffset=0;sideOffset=0} @origin
+
+Meteor_HIT:
+  Skills:
+  - skill{s=Meteor_HIT_D} @EntitiesNearOrigin{r=6}
+  - effect:particles{particle=explosion_huge;amount=3;hS=0.3;vS=0;speed=0;forwardOffset=0;sideOffset=0} @origin
+  - effect:particles{particle=flame;amount=25;hS=2;vS=2;speed=0.2;forwardOffset=0;sideOffset=0} @origin
+  - effect:particles{particle=lava;amount=10;hS=2;vS=2;speed=0;forwardOffset=0;sideOffset=0} @origin
+  - effect:particles{particle=campfire_cosy_smoke;amount=15;hS=0.3;vS=0.3;y=1;speed=0.1;forwardOffset=0;sideOffset=0} @origin
+  - effect:sound{s=mage_sounds:samus.meteor_explosion;volume=1;pitch=1} @self
+  - summon{type=Ground_Crack;amount=1;radius=0;yRadius=0;onSurface=true} @origin{yoffset=0}
+  - effect:sound{s=mage_sounds:samus.fire_burn;volume=1;pitch=1;delay=5} @origin
+  - totem{md=40;oT=Meteor_BURN_FX;oH=Meteor_BURN;hnp=true;hp=true;hR=1.5;vR=1;i=5} @origin
+  
+Meteor_HIT_D:
+  TargetConditions:
+  - mmoCanTarget{interaction=OFFENSE_ACTION} true
+  - entitytype{t=armorstands} false
+  Skills:
+  - ignite{ticks="20 * <modifier.duration>"}
+  - damage{a="<modifier.damage>"}
+  
+Meteor_BURN:
+  TargetConditions:
+  - mmoCanTarget{interaction=OFFENSE_ACTION} true
+  - entitytype{t=armorstands} false
+  Skills:
+  - ignite{ticks="20 * <modifier.duration>"}
+  
+Meteor_BURN_FX:
+  Skills:
+  - effect:particles{particle=lava;amount=12;hS=1.5;vS=0.1;y=-0.7;speed=0.02;forwardOffset=0;sideOffset=0}
+  
+CRACK_REMOVE:
+  Conditions:
+  - altitude{h=>2} true
+  Skills:
+  - remove @self
+  
